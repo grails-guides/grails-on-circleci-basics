@@ -1,14 +1,14 @@
-Travis CI integrates directly with your GitHub account. Follow the directions on the Travis website for
-https://docs.travis-ci.com/user/getting-started/[Getting Started.]
+Circle CI integrates directly with your GitHub account. Follow the directions on the Circle CI website for
+https://circleci.com/docs/2.0/#creating-a-repository[creating a repo to integrate Circle CI]
 
 In short you will need to:
 
-. Use your GitHub account to sign into Travis.
-. Give permission to Travis to access your repositories.
+. Use your GitHub account to sign into Circle CI.
+. Give permission to Circle to access your repositories.
 . Enable the repository with Travis CI.
-. Create a `.travis.yml`
+. Create a `.circleci/config.yml`
 
-The next image shows how to enable the repository with Travis CI:
+The next image shows how to enable the repository with Circle CI (Click Setup Project).
 
-image::travis.png[]
+image::circle.png[]
 

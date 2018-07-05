@@ -12,7 +12,6 @@ writingTheApp:
   runTests: Run Tests
 createGitHubRepo:
   title: Create GitHub Repo
-  grantPermissions: Grant File Permissions for Execution
 integrateCircle:
   title: Integrate Circle CI
   createCircleConfig: Create Circle Config File
