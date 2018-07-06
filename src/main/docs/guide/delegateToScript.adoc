@@ -1,24 +1,13 @@
-In order to be more expressive with the build, we can delegate to a script file.  In this scenario, Travis will execute a specified file
-and skip the defaults.  Below is a `.travis.yml` which delegates to a .`sh` file.
+In order to be more expressive with the build, we will delegate to a script file.  The script below runs both unit and integration/functional tests.
+The Geb test is run using Chrome in headless mode.  However, the feature method `DefaultHomePageSpec` is ignored if we do not specify the system property `geb.env`.
 
-.*.travis.yml*
-[source, yml]
-----
-include::{sourceDir}/.travis.yml[]
-----
-
-<1> The https://docs.travis-ci.com/user/chrome[Google Chrome addon] allows Travis CI builds to install Google Chrome at run time. To use the addon you need to be running builds on either the Trusty build environment or the OS X build environment.
-<2> Skip installation step entirely.
-<3> Delegate to a script.
-
-The script below runs both unit and integration/functional tests. The Geb test is run using Chrome in headless mode.
-
-.*travis-build.sh*
+.*circleci-build.sh*
 [source, bash]
 ----
-include::{sourceDir}/travis-build.sh[]
+include::{sourceDir}/circleci-build.sh[]
 ----
 
-<2> Execute `./gradlew -Dgeb.env=chromeHeadless check` command.
+<1> Execute `./gradlew -Dgeb.env=chromeHeadless check` command.
 
-Commit the change to Git push them to the remote repository. Upon the push, go to https://travis-ci.com/ and view the build running.
+Commit the change to Git push them to the remote repository.  Upon the push, go to https://circleci.com/ and view the build running.
+Once the build is complete, restart the build to demonstrate that Travis will use the cache for dependencies.

@@ -1,20 +1,14 @@
-The `.travis.yml` file tells Travis what to do. It must be located at the top level of your project.  For a Grails project,
-note that we have set the `language: groovy`.  Travis comes with reasonable defaults. If the project has `build.gradle` in the
-repository root, Travis runs `gradlew assemble` in the `install` phase, and `gradlew check` in the `test` phase.
+The `config.yml` file tells Circle CI what to do. It must be located in a folder class `.circleci/` at the top level of your project.
+Circle CI uses a docker image as the container and has the ability to cache dependencies.  It will delegate to a shell command
+where we execute gradle testing.
 
-.*.travis.yml*
+.*.circleci/config.yml*
 [source, yml]
 ----
-include::{sourceDir}/.travis.yml.default[]
+include::{sourceDir}/.circleci/config.yml[]
 ----
 
-<1> Gives the default Ubuntu infrastructure.
-<2> This line up to `before_cache` is caching configuration tells Travis CI explicitly that you want to store and use the Gradle cache and Wrapper for successive invocations of the build. Read https://guides.gradle.org/executing-gradle-builds-on-travisci/[Executing Gradle builds on travis ci].
-<3> Select `groovy` as the language.
-<4> Select the `Java` jdk8.
-
-Commit the change to Git push them to the remote repository.  Upon the push, go to https://travis-ci.com/ and view the build running.
-Once the build is complete, restart the build to demonstrate that Travis will use the cache for dependencies.
-
-Gradle `check` task executes both `test` and `integrationTest` tasks which in turn execute Grails Unit and Integration/Functional Test.
-However, the feature method `DefaultHomePageSpec` is ignored if we do not specify the system property `geb.env`.
+<1> Docker image used as a container, with the browser option.
+<2> Check fresh branch of code from GitHub.
+<3> Give execution permission.
+<4> Delegate to script file.
