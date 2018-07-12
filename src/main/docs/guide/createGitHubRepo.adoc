@@ -1,4 +1,4 @@
-We will need to place the Grails application on GitHub so that Travis can access it.
+We will need to place the Grails application on GitHub so that Circle CI can access it.
 
 Proceed to GitHub and follow the directions to https://help.github.com/articles/creating-a-new-repository/[create a new repository].
 

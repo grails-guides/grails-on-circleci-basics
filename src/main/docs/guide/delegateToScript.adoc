@@ -10,4 +10,4 @@ include::{sourceDir}/circleci-build.sh[]
 <1> Execute `./gradlew -Dgeb.env=chromeHeadless check` command.
 
 Commit the change to Git push them to the remote repository.  Upon the push, go to https://circleci.com/ and view the build running.
-Once the build is complete, restart the build to demonstrate that Travis will use the cache for dependencies.
+Once the build is complete, restart the build to demonstrate that Circle CI will use the cache for dependencies.
