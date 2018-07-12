@@ -15,6 +15,7 @@ createGitHubRepo:
 integrateCircle:
   title: Integrate Circle CI
   createCircleConfig: Create Circle Config File
-  delegateToScript: Delegate to Script File
+wheretoGoFromHere:
+  title: Where to Go From Here?
 helpWithGrails:
   title: Help with Grails
