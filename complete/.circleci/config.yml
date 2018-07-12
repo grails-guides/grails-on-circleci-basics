@@ -10,14 +10,14 @@ jobs:
     steps: # <4>
       - checkout  # <5>
       - restore_cache: # <6>
-                key: jars-{{ checksum "build.gradle" }}
+                key: grailsapp-{{ checksum "build.gradle" }}
       - run: chmod +x gradlew
       - run: ./gradlew --console=plain testClasses  # <7>
       - run: ./gradlew --console=plain integrationTestClasses  # <8>
       - save_cache: # <9>
                 paths:
                   - ~/.gradle
-                key: jars-{{ checksum "build.gradle" }}
+                key: grailsapp-{{ checksum "build.gradle" }}
       - run: ./gradlew --console=plain -Dgeb.env=chromeHeadless check  # <10>
       - store_artifacts: # <11>
           path: build/reports
