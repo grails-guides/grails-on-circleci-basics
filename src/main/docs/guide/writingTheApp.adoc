@@ -9,6 +9,12 @@ instead.
 Using the `geb2` feature modifies your build.gradle as follows:
 
 [source, groovy]
+.gradle.properties
+----
+include::{sourceDir}/gradle.properties[]
+----
+
+[source, groovy]
 .build.gradle
 ----
 buildscript {

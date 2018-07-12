@@ -6,9 +6,9 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
-        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.14.8"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:$assetPipelineVersion"
         //tag::buildscriptwebdriverbinaries[]
-        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:1.4" // <1>
+        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion" // <1>
         //end::buildscriptwebdriverbinaries[]
     }
 }
@@ -57,23 +57,23 @@ dependencies {
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
     runtime "org.apache.tomcat:tomcat-jdbc"
-    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.8"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:$assetPipelineVersion"
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.grails:grails-web-testing-support"
     //tag::gebdependencies[]
     testCompile "org.grails.plugins:geb" // <2>
-    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.6.0"  // <3>
-    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.6.0" // <4>
-    testCompile "org.seleniumhq.selenium:selenium-remote-driver:3.6.0"  // <5>
-    testCompile "org.seleniumhq.selenium:selenium-api:3.6.0"            // <5>
-    testCompile "org.seleniumhq.selenium:selenium-support:3.6.0"        // <5>
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"  // <3>
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion" // <4>
+    testCompile "org.seleniumhq.selenium:selenium-remote-driver:$seleniumVersion"  // <5>
+    testCompile "org.seleniumhq.selenium:selenium-api:$seleniumVersion"            // <5>
+    testCompile "org.seleniumhq.selenium:selenium-support:$seleniumVersion"        // <5>
     //end::gebdependencies[]
 }
 
 //tag::webdriverBinaries[]
 webdriverBinaries {
-    chromedriver '2.40'  // <6>
-    geckodriver '0.21.0' // <7>
+    chromedriver "${chromedriverVersion}"  // <6>
+    geckodriver "${geckodriverVersion}" // <7>
 }
 //end::webdriverBinaries[]
 
@@ -95,7 +95,6 @@ tasks.withType(Test) {
     }
 // end::testLogging[]
 }
-
 
 assets {
     minifyJs = true
