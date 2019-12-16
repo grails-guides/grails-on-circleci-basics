@@ -2,9 +2,7 @@ package example.grails
 
 import geb.spock.GebSpec
 import grails.testing.mixin.integration.Integration
-import spock.lang.IgnoreIf
 
-@IgnoreIf( { !sys['geb.env'] })
 @Integration
 class DefaultHomePageSpec extends GebSpec {
 
