@@ -84,7 +84,7 @@ dependencies {
 
 //tag::webdriverBinaries[]
 webdriverBinaries {
-    chromedriver "${chromedriverVersion}"  // <6>
+    chromedriver "${chromeDriverVersion}"  // <6>
     geckodriver "${geckodriverVersion}" // <7>
 }
 //end::webdriverBinaries[]
