@@ -73,6 +73,7 @@ dependencies {
     //tag::gebdependencies[]
     testCompile "org.grails.plugins:geb" // <2>
     testCompile "org.seleniumhq.selenium:htmlunit-driver:2.35.1"
+    testRuntime 'net.sourceforge.htmlunit:htmlunit:2.35.0'
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion"  // <3>
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion" // <4>
     testCompile "org.seleniumhq.selenium:selenium-remote-driver:$seleniumVersion"  // <5>
