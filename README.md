@@ -1,6 +1,6 @@
 # Grails on Circle CI Basics
 
-This repository contains the worked sample app for the [Grails on Circle CI Basics](https://grails.apache.org/guides/grails-on-circleci-basics/5.0.0/guide/index.html) guide on the Apache Grails site.
+This repository contains the worked sample app for the [Grails on Circle CI Basics](https://grails.apache.org/guides/grails-on-circleci-basics/4/guide/index.html) guide on the Apache Grails site.
 
 ## Run the example
 
